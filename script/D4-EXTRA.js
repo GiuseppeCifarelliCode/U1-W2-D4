@@ -46,14 +46,32 @@ let shoppingCart = [
         quantity: 2,
         id: 7645,
     }
-];
-console.log(shoppingCart)
+]
+const shoppingCartTotal = function(myArray = shoppingCart) {
+    let totalSum = 0
+    for ( let i = 0; i < shoppingCart.length; i++){
+        totalSum += (shoppingCart[i].price * shoppingCart[i].quantity)
+    }
+    console.log("Total Sum is", totalSum)
+    return totalSum
+}
+
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "addToShoppingCart" che riceve un nuovo oggetto dello stesso tipo, lo aggiunge a "shoppingCart" e ritorna il nuovo numero totale degli elementi.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const addToShoppingCart = function(newItemName, newItemPrice, newItemQuantity, newItemId) {
+    let newItem = {
+        name: newItemName,
+        price: newItemPrice,
+        quantity: newItemQuantity,
+        id: newItemId,
+    }
+    shoppingCart.push(newItem)
+    return shoppingCart.length
+}
 
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -61,6 +79,16 @@ console.log(shoppingCart)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const maxShoppingCart = function(myArray = shoppingCart) {
+    let indexMaxPrice = 0
+    let i 
+    for ( i = 0; i < shoppingCart.length - 1; i++) {
+        if ( shoppingCart[i].price > shoppingCart[i+1].price) {
+            indexMaxPrice = i
+        } 
+    }
+    return shoppingCart[indexMaxPrice]
+}
 
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -68,6 +96,9 @@ console.log(shoppingCart)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const latestShoppingCart = function(myArray = shoppingCart) {
+    return (shoppingCart[shoppingCart.length - 1])
+}
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
