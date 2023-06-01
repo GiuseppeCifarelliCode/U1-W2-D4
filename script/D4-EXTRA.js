@@ -18,8 +18,8 @@ checkArray = function (array) {
     console.log("sum of numbers > 5 =", sum)
     return sum
 }
-let array = giveMeRandom(10)
-checkArray(array)
+// let array = giveMeRandom(10)
+// checkArray(array)
 
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -106,18 +106,59 @@ const latestShoppingCart = function(myArray = shoppingCart) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const loopUntil = function(x) {
+    let randomNumber = 0
+    let i = 0
+    if( 0 < x && x < 9) {
+        while( i < 3) {
+            randomNumber = Math.floor(Math.random() * 10)
+            if( randomNumber > x) {
+                console.log(randomNumber)
+                i++
+            } else {
+                i = 0
+            }
+        }
+    } else {
+        console.log("Insert number is not available")
+    }
+}
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const average = function(myArray) {
+    let avg = 0
+    for( let i = 0; i < myArray.length; i++) {
+        if( typeof myArray[i] === "number") {
+            avg = (avg + myArray[i])/2
+        } else {
+            console.log("There isn't a number in this position", myArray[i])
+    }
+    }
+    console.log("Average is", avg)
+    return avg
+}
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const longest = function(myArray) {
+    let maxString = "" 
+    for( let i = 0; i < myArray.length - 1; i++) {
+        if( myArray[i].length > myArray[i+1].length) {
+            maxString = myArray[i]
+        }
+    }
+    console.log("Longest string is", maxString)
+    return maxString
+}
+// let arr = ["Hi", "Bye", "Hello", "Dumbledore", "GoodBye", "Severus"]
+// longest(arr)
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
@@ -125,6 +166,22 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const antiSpam = function (emailContent) {
+    switch(true) {
+        case emailContent.includes("SPAM") : 
+        console.log("SPAM");
+        return false
+        break
+        case emailContent.includes("SCAM") : 
+        console.log("SCAM");
+        return false
+        break
+        default : 
+        console.log("This email is safe"); 
+        return true
+    }
+}
+// antiSpam("This email is just for SCAM")
 
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
