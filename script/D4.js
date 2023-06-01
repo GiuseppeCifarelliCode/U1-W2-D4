@@ -21,7 +21,7 @@ const area = function(l1, l2) {
         console.log("Rectangle Area is", rectangleArea)
         }
 }
-area(2, 3)
+// area(2, 3)
 // area(4, 4)
 
 /* ESERCIZIO 2
@@ -45,7 +45,7 @@ const crazySum = function(x, y) {
     }
 }
 // crazySum(5, 2)
-crazySum(5, 5)
+// crazySum(5, 5)
 
 /* ESERCIZIO 3
  Scrivi una funzione di nome "crazyDiff" che calcola la differenza assoluta tra un numero fornito come parametro e 19.
@@ -62,7 +62,7 @@ const crazyDiff = function(x) {
         return Math.abs(diffAss)
     }
 }
-crazyDiff(21)
+// crazyDiff(21)
 
 /* ESERCIZIO 4
  Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
@@ -72,12 +72,14 @@ crazyDiff(21)
 /* SCRIVI QUI LA TUA RISPOSTA */
 const boundary = function(n) {
     n = Math.floor(n)
-    if ( 20 < n <= 100 || n === 400) {
+    if ( 20 < n && n <= 100 || n === 400) {
         console.log ("n =", n)
         return true
+    } else {
+        return false
     }
 }
-boundary(35)
+// boundary(35)
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
@@ -86,17 +88,18 @@ boundary(35)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const epify = function(string) {
-    let array = string.split(" ") 
+const epify = function(str) {
+    let array = str.split(" ") 
     if (array[0] === "EPICODE"){
-        console.log(string)
-        return string
+        console.log(str)
+        return str
     } else {
-        string = "EPICODE " + string
-        console.log(string)
+        str = "EPICODE " + str
+        console.log(str)
+        return str
     }
 }
-epify("Hello Epicoders")
+// epify("Hello Epicoders")
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
@@ -117,7 +120,7 @@ const check3and7 = function(positiveNumber) {
     console.log("Number isn't positive or is equal to 0")
         }
 }
-check3and7(2)
+// check3and7(2)
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
@@ -131,7 +134,7 @@ const reverseString = function(string) {
     }
     console.log("Reversed string is", finalString)
 }
-reverseString("EPICODE")
+// reverseString("EPICODE")
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
@@ -147,7 +150,7 @@ const upperFirst = function(string) {
         string = array.join(" ")
         console.log(string)
     }
-upperFirst("hello epicoders")
+// upperFirst("hello epicoders")
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -156,11 +159,10 @@ upperFirst("hello epicoders")
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 const cutString = function(string) {
-    let finalString = string.slice(1)
-    finalString = finalString.slice(0, -1)
+    let finalString = string.slice(1, string.length - 1)
     console.log(finalString)
 }
-cutString("hello epicoders")
+// cutString("hello epicoders")
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.

@@ -27,7 +27,27 @@ checkArray(array)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+let shoppingCart = [
+    {
+        name: "computer",
+        price: 1500,
+        quantity: 1,
+        id: 1574,
+    },
+    {
+        name: "mouse",
+        price: 30,
+        quantity: 5,
+        id: 2694,
+    },
+    {
+        name: "dashboard",
+        price: 120,
+        quantity: 2,
+        id: 7645,
+    }
+];
+console.log(shoppingCart)
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "addToShoppingCart" che riceve un nuovo oggetto dello stesso tipo, lo aggiunge a "shoppingCart" e ritorna il nuovo numero totale degli elementi.
