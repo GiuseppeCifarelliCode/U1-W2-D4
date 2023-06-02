@@ -186,6 +186,15 @@ const antiSpam = function (emailContent) {
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
+const dayPassed = function(date) {
+    let todayMilliseconds = Date.parse(new Date())
+    let milliseconds = Date.parse(date)
+    milliseconds = todayMilliseconds - milliseconds
+    let days = Math.floor(milliseconds / 86400000)
+    console.log("Days passed from the insert date", days)
+    return days
+}
+// dayPassed("2023-06-01")
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
